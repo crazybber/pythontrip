@@ -92,4 +92,98 @@ print(L)
 def not_empty(s):
 	return s and s.strip()
 	
+L=list(filter(not_empty,['a',' ','B',None,'C']))
 
+print(L)
+
+print(list(filter(not_empty,'A B C DE')))
+
+#求素数
+
+
+def _odd_iter():
+	n=3
+	while True:
+		yield n
+		n+=2
+		
+ 
+def _not_divisible(n):
+	return lambda x:x%n >0
+
+
+	
+def primes():
+	yield 2
+	it=_odd_iter()
+	while True:
+		n=next(it)
+		yield n
+		it=filter(_not_divisible(n),it)
+		
+for n in primes():
+	if n < 100:
+		print(n)
+	else:
+		break
+
+		
+f=_odd_iter()
+print(f)
+print(next(f))
+print(next(f))
+print(next(f))
+print(next(f))
+
+
+it=_odd_iter()
+print(it)
+it = filter(_not_divisible(n), it)
+print(it)
+print(next(it))
+print(it)
+print(next(it))
+print(next(it))
+print(next(it))
+
+#sss
+
+s="abcde"
+print(s[::-1])
+
+def is_palindrome(n):
+	s=str(n)
+	return s[::-1] == s
+
+output = filter(is_palindrome, range(1, 1000))
+print(list(output))
+
+
+
+L=sorted([2,34,578,1,25,7,9])
+print(L)
+
+L=sorted([2,34,578,-1,-25,-7,9])
+print(L)
+
+L=sorted([2,34,578,-1,-25,-7,9],key=abs)
+print(L)
+
+L=sorted(['eamon','chen','bob','Helo','Tom'])
+print(L)
+
+L=sorted(['eamon','chen','bob','Helo','Tom'],key=str.lower)
+print(L)
+
+L=sorted(['eamon','chen','bob','Helo','Tom'],reverse=True)
+print(L)
+
+L = [('Bob', 75), ('Adam', 92), ('Bart', 66), ('Lisa', 88)]
+
+L=sorted(L,key=lambda x:x[0].lower())
+print(L)
+
+L = [('Bob', 75), ('Adam', 92), ('Bart', 66), ('Lisa', 88)]
+
+L=sorted(L,key=lambda x:x[1])
+print(L)
