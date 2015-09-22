@@ -56,3 +56,50 @@ L=MyList()
 L.add(1)
 L.add(2)
 print(L)
+
+
+# ORM Framework test
+
+# class User(Model):
+	# id=IntegerField('id')
+	# name=StringField('username')
+	# eamail=StringField('eamail')
+	# password=StringField('password')
+	
+	
+# u = User(id=1234,name='Eamon',eamail='test@orm.me',password='my-pwd')
+
+# u.Save()
+
+
+
+class Field(object):
+	def __init__(self,name,colum_type):
+		self.name=name
+		self.colum_type=colum_type
+	def __str__(self):
+		return '<%s:%s>' % (self.__class__.name__,self.name)
+	
+
+class StringField(Field):
+	def __init__(self,name):
+		super(StringField,self).__init__(name,'varchar(100)')
+		
+class IntegerField(Field):
+	def __init__(self,name):
+		super(IntegerField,self).__init__(name,'bigint')
+		
+		
+# class ModelMetaclass(type):
+	# def __new__(cls,name,bases,attrs):
+		# if name == 'Model':
+			# return type.__new__(cls,name,bases,attrs)
+		# print('Found model:%s' % name)
+		# mappings= dict()
+		# for k,v in attrs.items():
+			# if isinstance(v,Field):
+				# print(foun)
+				
+s=StringField('name')
+
+print(dir(s))
