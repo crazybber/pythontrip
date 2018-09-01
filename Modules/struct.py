@@ -19,6 +19,6 @@ import struct
 r=struct.pack('>I',10240099)
 print(r)
 
-r=struct.unpack('>IH', b'\xf0\xf0\xf0\xf0\x80\x80')
+r=struct.unpack('>IH', '\xf0\xf0\xf0\xf0\x80\x80')
 
 print(r)

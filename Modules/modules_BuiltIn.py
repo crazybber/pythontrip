@@ -6,7 +6,6 @@ __Author__ ='eamon'
 
 'Modules Built-In'
 
-
 from datetime import datetime
 
 now = datetime.now()
@@ -80,14 +79,8 @@ def to_timestamp(dt_str,tz_str):
 		tz_hours=int(tm_fmt.group(1))
 		cur_datetime=datetime.strptime(dt_str,'%Y-%m-%d %H:%M:%S')
 		return cur_datetime.replace(tzinfo=timezone(timedelta(hours=tz_hours))).timestamp()
-		
-		
 
-		
 t1 = to_timestamp('2015-6-1 08:10:30', 'UTC+7:00')
 assert t1 == 1433121030.0, t1
 
 print('Pass')
-	
-	
-	
