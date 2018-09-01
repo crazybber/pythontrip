@@ -19,7 +19,6 @@ r=base64.urlsafe_b64decode('abcd--__')
 
 print(r)
 
-
 def safe_base64_decode(s):
 	last_empty= (-len(s))%4
 	if last_empty != 0:
