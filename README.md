@@ -1,2 +1,3 @@
-# Python-Learn-Sample
-PythonProject
+# Python Trip
+
+Go in Python Way
